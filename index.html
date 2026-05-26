@@ -113,7 +113,7 @@
     }
     .hero-tagline-long {
       font-size: clamp(0.65rem, 1.2vw, 0.78rem);
-      color: rgba(237,224,196,0.65); line-height: 1.8;
+      color: rgba(237,224,196,0.92); line-height: 1.8;
       max-width: 560px; margin: 0 auto 3.5rem;
       animation: fadeUp 0.8s 0.55s ease both;
     }
@@ -290,6 +290,48 @@
       padding: 0.25rem 0.6rem;
     }
 
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--maroon-dk); }
+    .portfolio-filters {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.35); color: rgba(201,168,76,0.65);
+      background: transparent; padding: 0.45rem 1rem; cursor: pointer;
+      transition: all 0.25s; font-family: 'Jost', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gold); color: var(--maroon-dk); border-color: var(--gold);
+    }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .portfolio-card {
+      background: rgba(255,255,255,0.04); padding: 2rem 1.8rem;
+      border-left: 2px solid transparent; transition: all 0.3s;
+    }
+    .portfolio-card:hover { border-left-color: var(--gold); background: rgba(255,255,255,0.07); }
+    .portfolio-card.hidden { display: none; }
+    .portfolio-sector {
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.6rem; font-weight: 500;
+    }
+    .portfolio-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: var(--cream); font-weight: 400;
+      line-height: 1.4; margin-bottom: 0.8rem;
+    }
+    .portfolio-desc {
+      font-size: 0.75rem; color: rgba(237,224,196,0.92);
+      line-height: 1.85;
+    }
+    .portfolio-outcome {
+      font-size: 0.7rem; color: rgba(201,168,76,0.95);
+      font-style: italic; margin-top: 0.8rem; padding-top: 0.8rem;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
     /* ── INDUSTRY ── */
     #industry { background: var(--champagne); }
     .industry-grid {
@@ -323,7 +365,7 @@
     /* ── FOUNDER ── */
     #founder { background: var(--maroon-dk); }
     .founder-grid {
-      display: grid; grid-template-columns: 160px 1fr; gap: 4rem;
+      display: grid; grid-template-columns: 90px 1fr; gap: 3rem;
       align-items: start;
     }
     .founder-photo-wrap {
@@ -331,11 +373,11 @@
     }
     .founder-photo-wrap::before {
       content: ''; position: absolute;
-      top: 10px; left: 10px; right: -10px; bottom: -10px;
+      top: 6px; left: 6px; right: -6px; bottom: -6px;
       border: 1px solid rgba(201,168,76,0.35);
     }
     .founder-photo {
-      width: 160px; height: 200px; object-fit: cover;
+      width: 55px; height: 73px; object-fit: cover;
       object-position: center top;
       display: block; position: relative; z-index: 1;
       filter: grayscale(20%) contrast(1.05) sepia(8%);
@@ -346,8 +388,12 @@
       margin-bottom: 0.3rem;
     }
     .founder-title {
-      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(201,168,76,0.6); margin-bottom: 2rem; font-weight: 400;
+      font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(201,168,76,0.6); margin-bottom: 0.5rem; font-weight: 400;
+    }
+    .founder-cred {
+      font-size: 0.7rem; color: rgba(237,224,196,0.55);
+      margin-bottom: 2rem; font-style: italic; line-height: 1.6;
     }
     .founder-bio {
       font-size: 0.85rem; color: var(--champagne); line-height: 2;
@@ -401,6 +447,64 @@
     }
     .btn-outline-dark:hover { background: var(--maroon-dk); color: var(--gold); }
 
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--cream); }
+    .portfolio-header { margin-bottom: 3rem; }
+    .portfolio-disclaimer {
+      font-size: 0.72rem; color: var(--text-mid); font-style: italic;
+      line-height: 1.8; max-width: 600px;
+      border-left: 2px solid rgba(201,168,76,0.4); padding-left: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .portfolio-filters {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.45rem 1.1rem; border: 1px solid rgba(107,26,26,0.25);
+      background: transparent; color: var(--text-mid); cursor: pointer;
+      transition: all 0.2s; font-family: 'Jost', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--maroon-dk); color: var(--gold);
+      border-color: var(--maroon-dk);
+    }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+    }
+    .portfolio-card {
+      background: var(--white); padding: 2rem 1.8rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column; gap: 0.8rem;
+    }
+    .portfolio-card:hover {
+      border-color: var(--gold); transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(74,16,16,0.08);
+    }
+    .portfolio-card[style*="none"] { display: none; }
+    .portfolio-practice {
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold-dk); font-weight: 600;
+    }
+    .portfolio-sector {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; color: var(--maroon-dk); font-weight: 500;
+      line-height: 1.3;
+    }
+    .portfolio-desc {
+      font-size: 0.78rem; color: var(--text-mid); line-height: 1.85; flex: 1;
+    }
+    .portfolio-outcome {
+      font-size: 0.7rem; color: var(--maroon);
+      font-style: italic; padding-top: 0.8rem;
+      border-top: 1px solid rgba(201,168,76,0.25);
+    }
+    @media (max-width: 768px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-filters { gap: 0.4rem; }
+    }
+
     /* ── FOOTER ── */
     footer {
       background: #0E0505; padding: 3rem 2rem;
@@ -443,8 +547,8 @@
       .about-grid, .visi-grid, .founder-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .values-grid, .practice-grid { grid-template-columns: 1fr; }
       .industry-grid { grid-template-columns: repeat(2, 1fr); }
-      .founder-photo-wrap { max-width: 160px; }
-      .founder-photo { width: 160px; height: 200px; }
+      .founder-photo-wrap { max-width: 72px; }
+      .founder-photo { width: 72px; height: 96px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .footer-contact { text-align: left; }
     }
@@ -462,6 +566,7 @@
     <li><a href="#about">Tentang Kami</a></li>
     <li><a href="#values">Core Values</a></li>
     <li><a href="#practice">Layanan</a></li>
+    <li><a href="#portfolio">Portofolio</a></li>
     <li><a href="#industry">Industri</a></li>
     <li><a href="#founder">Founder</a></li>
   </ul>
@@ -668,6 +773,164 @@
   </div>
 </section>
 
+
+
+<!-- PORTOFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <p class="section-eyebrow" style="color:var(--gold-lt);">Rekam Jejak</p>
+    <h2 class="section-title light">Portofolio</h2>
+    <div class="gold-line"></div>
+    <p style="font-size:0.8rem;color:rgba(237,224,196,0.55);margin-bottom:2rem;font-style:italic;">Semua identitas klien dijaga kerahasiaannya sepenuhnya sesuai komitmen Arkadia terhadap privasi.</p>
+
+    <div class="portfolio-filters">
+      <button class="filter-btn active" onclick="filterPortfolio('all', this)">Semua</button>
+      <button class="filter-btn" onclick="filterPortfolio('compliance', this)">Kepatuhan & Retainer</button>
+      <button class="filter-btn" onclick="filterPortfolio('sengketa', this)">Sengketa & Litigasi</button>
+      <button class="filter-btn" onclick="filterPortfolio('debt', this)">Penagihan & Restrukturisasi</button>
+      <button class="filter-btn" onclick="filterPortfolio('haki', this)">HAKI & Kreatif</button>
+      <button class="filter-btn" onclick="filterPortfolio('private', this)">Layanan Private</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- COMPLIANCE & RETAINER -->
+      <div class="portfolio-card" data-cat="compliance">
+        <div class="portfolio-sector">Agribisnis · Kelapa Sawit</div>
+        <div class="portfolio-title">Retainer Legal — Grup Perkebunan Kelapa Sawit</div>
+        <p class="portfolio-desc">Bertindak sebagai <em>retainer legal counsel</em> jangka panjang untuk grup perusahaan perkebunan dan pengolahan kelapa sawit lintas wilayah. Cakupan meliputi investigasi dan pelaporan <em>internal fraud</em>, <em>legal due diligence</em>, serta penataan kebijakan hukum operasional harian.</p>
+        <div class="portfolio-outcome">→ Hubungan kerja jangka panjang dengan kepercayaan penuh atas pengelolaan risiko hukum operasional</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="compliance">
+        <div class="portfolio-sector">Properti & Perhotelan</div>
+        <div class="portfolio-title">Retainer Legal & Penyusunan SOP — Perusahaan Holding Properti</div>
+        <p class="portfolio-desc">Bertindak sebagai <em>retainer legal counsel</em> sekaligus konseptor penyusunan SOP operasional untuk perusahaan <em>holding</em> yang mengelola portofolio properti, hotel, dan jaringan akomodasi.</p>
+        <div class="portfolio-outcome">→ Kepatuhan hukum terintegrasi ke dalam prosedur operasional standar perusahaan</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="compliance">
+        <div class="portfolio-sector">Rekayasa Lingkungan & Agrokompleks</div>
+        <div class="portfolio-title">Retainer Legal — Perusahaan Teknologi Lingkungan</div>
+        <p class="portfolio-desc">Mendampingi perusahaan teknologi lingkungan yang beroperasi lintas lini bisnis sebagai <em>retainer legal</em>, mencakup kepatuhan regulasi lingkungan, perizinan operasional, dan mitigasi risiko hukum lintas sektor.</p>
+        <div class="portfolio-outcome">→ Struktur kepatuhan lintas lini bisnis yang adaptif dan terukur</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="compliance">
+        <div class="portfolio-sector">Pertambangan & Energi</div>
+        <div class="portfolio-title">Legal Corporate Sementara — Perusahaan Smelter Nikel</div>
+        <p class="portfolio-desc">Mengisi fungsi <em>legal corporate</em> sementara untuk perusahaan pemurnian bijih nikel terintegrasi, mencakup pengelolaan dokumen korporasi dan kepatuhan operasional selama masa transisi.</p>
+        <div class="portfolio-outcome">→ Kesinambungan fungsi legal korporasi terjaga selama masa transisi</div>
+      </div>
+
+      <!-- SENGKETA & LITIGASI -->
+      <div class="portfolio-card" data-cat="sengketa">
+        <div class="portfolio-sector">Properti Teknologi</div>
+        <div class="portfolio-title">Litigasi Wanprestasi — Perusahaan Proptech Nasional</div>
+        <p class="portfolio-desc">Mewakili klien dalam sengketa wanprestasi dan perbuatan melawan hukum akibat gagal bayar yang melibatkan perusahaan teknologi properti berskala nasional. Perkara ditangani hingga tahap persidangan di Pengadilan Negeri.</p>
+        <div class="portfolio-outcome">→ Penanganan perkara perdata hingga tahap persidangan</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="sengketa">
+        <div class="portfolio-sector">Agribisnis · Kelapa Sawit</div>
+        <div class="portfolio-title">Sengketa PHI hingga Kasasi — Perusahaan Perkebunan</div>
+        <p class="portfolio-desc">Menangani dua sengketa hubungan industrial terkait pemutusan hubungan kerja yang berlanjut hingga tingkat kasasi di Mahkamah Agung — mulai dari bipartit, mediasi Disnaker, persidangan PHI, hingga upaya hukum kasasi.</p>
+        <div class="portfolio-outcome">→ Penanganan penuh lintas instansi hingga Mahkamah Agung</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="sengketa">
+        <div class="portfolio-sector">Agribisnis · Kelapa Sawit</div>
+        <div class="portfolio-title">Penyelesaian Sengketa Tumpang Tindih Lahan</div>
+        <p class="portfolio-desc">Menyelesaikan sengketa tumpang tindih lahan perkebunan melalui proses negosiasi berbasis <em>site assessment</em> lapangan. Penyelesaian dicapai secara damai dengan dokumentasi hukum yang terstruktur — tanpa eskalasi ke litigasi.</p>
+        <div class="portfolio-outcome">→ Resolusi sengketa lahan secara damai dengan dokumentasi hukum lengkap</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="sengketa">
+        <div class="portfolio-sector">Hukum Pidana · Pertanahan</div>
+        <div class="portfolio-title">Pendampingan Saksi Terlapor — Kasus Pidana Pertanahan</div>
+        <p class="portfolio-desc">Mendampingi saksi terlapor dalam kasus dugaan tindak pidana pemerasan dan penggelapan dokumen pertanahan, memastikan perlindungan hak hukum klien sepanjang proses pemeriksaan.</p>
+        <div class="portfolio-outcome">→ Perlindungan hak hukum klien terjaga sepanjang proses pemeriksaan</div>
+      </div>
+
+      <!-- DEBT & RESTRUKTURISASI -->
+      <div class="portfolio-card" data-cat="debt">
+        <div class="portfolio-sector">Distribusi · Infrastruktur Jalan</div>
+        <div class="portfolio-title">Penagihan Piutang Korporasi — Distributor Aspal Nasional</div>
+        <p class="portfolio-desc">Menangani portofolio penagihan piutang korporasi untuk perusahaan distributor aspal yang telah beroperasi sejak 1969, mencakup penagihan tagihan yang belum dan kurang dibayar dari jaringan pelanggan dan mitra bisnis.</p>
+        <div class="portfolio-outcome">→ Pemulihan piutang korporasi melalui pendekatan terstruktur</div>
+      </div>
+
+
+
+      <div class="portfolio-card" data-cat="debt">
+        <div class="portfolio-sector">Pertambangan & Energi</div>
+        <div class="portfolio-title">Restrukturisasi Utang — Perusahaan Pertambangan Batubara</div>
+        <p class="portfolio-desc">Mendampingi proses restrukturisasi utang debitur perusahaan pertambangan dan energi pemegang IUP batubara, mencakup fasilitasi negosiasi dan penyusunan skema penyelesaian kewajiban yang disepakati para pihak.</p>
+        <div class="portfolio-outcome">→ Skema restrukturisasi utang yang disepakati dan terdokumentasi</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="debt">
+        <div class="portfolio-sector">Agribisnis · Kelapa Sawit</div>
+        <div class="portfolio-title">Pemulihan Piutang melalui Restrukturisasi — Perusahaan Perkebunan</div>
+        <p class="portfolio-desc">Menangani penagihan piutang perusahaan perkebunan kelapa sawit kepada debitur korporasi melalui <em>soft approach</em> — diselesaikan dengan skema restrukturisasi dan cicilan yang disepakati tanpa eskalasi ke litigasi.</p>
+        <div class="portfolio-outcome">→ Pemulihan piutang penuh melalui negosiasi, tanpa litigasi</div>
+      </div>
+
+      <!-- HAKI & KREATIF -->
+      <div class="portfolio-card" data-cat="haki">
+        <div class="portfolio-sector">Industri Kreatif · Musik</div>
+        <div class="portfolio-title">Perlindungan Karya & Perjanjian Kemitraan — Pelaku Seni Musik</div>
+        <p class="portfolio-desc">Bertindak sebagai <em>legal drafter</em> dan <em>reviewer</em> perjanjian kerja dan perjanjian kerjasama untuk pelaku seni musik, mencakup kontrak kemitraan, jual beli putus hasil karya cipta, serta pengurusan pendaftaran merek dan hak cipta.</p>
+        <div class="portfolio-outcome">→ Perlindungan karya dan hak cipta terdaftar secara resmi</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="compliance">
+        <div class="portfolio-sector">Waralaba & Ritel Modern</div>
+        <div class="portfolio-title">Manajemen Kontrak & Dokumen Waralaba — Jaringan Apotek Nasional</div>
+        <p class="portfolio-desc">Melalui jaringan ahli Arkadia, kami memiliki keahlian mendalam dalam pengelolaan seluruh dokumen perjanjian waralaba dan antar-entitas dalam grup usaha ritel kesehatan berskala nasional — mencakup kontrak waralaba, perjanjian <em>sister company</em>, hingga aspek legal lini manufaktur produk farmasi dan antiseptik dalam grup yang sama.</p>
+        <div class="portfolio-outcome">→ Pengelolaan dokumen kontrak waralaba lintas entitas secara sistematis dan terstruktur</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="compliance">
+        <div class="portfolio-sector">Tata Kelola Korporasi · Grup Perusahaan</div>
+        <div class="portfolio-title">Deputy of Operational — Fungsi Setara Corporate Secretary</div>
+        <p class="portfolio-desc">Mengemban peran <em>Deputy of Operational</em> di lingkungan <em>group company</em> berskala multinasional — menjalankan fungsi yang setara dengan <em>Corporate Secretary</em>, mencakup koordinasi tata kelola korporasi, pengelolaan kepatuhan internal, pengawasan anggaran operasional lintas sektor, serta penyelarasan kebijakan operasional lintas entitas dalam grup.</p>
+        <div class="portfolio-outcome">→ Tata kelola operasional dan kepatuhan lintas entitas grup berjalan terstruktur dan akuntabel</div>
+      </div>
+
+      <!-- PRIVATE -->
+      <div class="portfolio-card" data-cat="private">
+        <div class="portfolio-sector">Layanan Private · Investasi</div>
+        <div class="portfolio-title">Pendampingan Pemulihan Dana — Penipuan Investasi MTN</div>
+        <p class="portfolio-desc">Mendampingi korban penipuan skema investasi yang menggunakan instrumen <em>medium term note</em>, mencakup proses negosiasi restrukturisasi pengembalian dana pokok beserta imbal hasilnya.</p>
+        <div class="portfolio-outcome">→ Skema pemulihan dana yang disepakati melalui negosiasi terstruktur</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="private">
+        <div class="portfolio-sector">Layanan Private · Perbankan</div>
+        <div class="portfolio-title">Pendampingan Korban Penipuan Investasi Sistematis</div>
+        <p class="portfolio-desc">Mendampingi korban penipuan investasi sistematis yang melibatkan lembaga perbankan sebagai pemberi kredit dengan agunan surat keputusan pensiun — mencakup analisis hukum dan strategi pemulihan aset.</p>
+        <div class="portfolio-outcome">→ Pemetaan jalur hukum dan strategi pemulihan aset yang terstruktur</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="private">
+        <div class="portfolio-sector">Layanan Private · Keluarga</div>
+        <div class="portfolio-title">Pendampingan Hukum — Persiapan Berkas Perceraian</div>
+        <p class="portfolio-desc">Mendampingi klien sebagai <em>legal drafter</em> dalam persiapan dokumen dan kelengkapan berkas perceraian — memastikan seluruh dokumen hukum tersusun dengan tepat, lengkap, dan siap diajukan, dengan pendampingan yang personal dan terjaga kerahasiaannya.</p>
+        <div class="portfolio-outcome">→ Seluruh berkas hukum terstruktur dan lengkap, klien terdampingi dengan tenang</div>
+      </div>
+
+      <div class="portfolio-card" data-cat="private">
+        <div class="portfolio-sector">Layanan Private · UMKM</div>
+        <div class="portfolio-title">Pendirian Badan Usaha & Pendaftaran HaKI — Pelaku UMKM</div>
+        <p class="portfolio-desc">Mendampingi pendirian PT Perseorangan, pendaftaran merek, dan pengurusan izin edar produk untuk pelaku usaha skala UMKM — memberikan akses ke layanan hukum yang setara dengan perusahaan besar.</p>
+        <div class="portfolio-outcome">→ Entitas hukum berdiri, merek terdaftar, izin edar diperoleh</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- INDUSTRY COVERAGE -->
 <section id="industry">
   <div class="container">
@@ -706,6 +969,7 @@
       <div>
         <div class="founder-name">Nendya D. Hellanda, S.H.</div>
         <div class="founder-title">Founder &amp; Lead Consultant — Arkadia Compliance House</div>
+        <div class="founder-cred">S1 Fakultas Hukum &nbsp;·&nbsp; Universitas Atma Jaya Yogyakarta &nbsp;·&nbsp; <em>Advokat Berlisensi — PERADI</em></div>
         <p class="founder-bio">
           Seorang praktisi hukum korporasi dan tata kelola perusahaan dengan pengalaman dalam mengelola kepatuhan regulasi serta manajemen risiko. Mengawali karir di ekosistem <em>group</em> perusahaan yang berskala multinasional, ia terbiasa menangani kompleksitas hukum operasional harian, penataan kebijakan internal, hingga pengawasan anggaran operasional lintas sektor.
         </p>
@@ -753,8 +1017,21 @@
       <a href="https://arkadialaw.biz.id">arkadialaw.biz.id</a>
     </div>
   </div>
-  <p class="footer-copy">© 2025 Arkadia Compliance House · Yogyakarta, Indonesia · Seluruh hak dilindungi</p>
+  <p class="footer-copy">© 2026 Arkadia Compliance House · Yogyakarta, Indonesia · Seluruh hak dilindungi</p>
 </footer>
 
+<script>
+function filterPortfolio(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.portfolio-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
 </body>
 </html>
